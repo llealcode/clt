@@ -8,3 +8,7 @@ Esse app faz vários calculos trabalhistas para pessoas que trabalham na modalid
 - [ ] Recisão
 - [ ] FGTS
 - [ ] 13º
+
+
+
+**Desenvolvido por: Lucas e Max**
