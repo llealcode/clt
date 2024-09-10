@@ -37,3 +37,15 @@ class BotoesMenu(ft.IconButton):
                 )
             )
         )
+
+class TopBar(ft.AppBar):
+
+    def __init__(self, page):
+
+        super().__init__(
+            leading=ft.Icon(ft.icons.WALLET_TRAVEL),
+            leading_width=40,
+            title=ft.Text("Cálculos trabalhistas"),
+            center_title=False
+        )
+            
