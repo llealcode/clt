@@ -3,10 +3,9 @@ Esse app faz vários calculos trabalhistas para pessoas que trabalham na modalid
 
 ### Cálculos:
 
-- [ ] Horas extras
+- [x] Horas extras
 - [ ] Férias
 - [ ] Recisão
-- [ ] FGTS
 - [ ] 13º
 
 
