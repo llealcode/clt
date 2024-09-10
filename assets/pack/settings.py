@@ -1,3 +1,8 @@
+# Classes criadas
+from assets.pack.page_home import ViewHome
+from assets.pack.overlay import MenuBottom
+
+# Bibliotecas do python
 import flet as ft
 
 
@@ -10,7 +15,7 @@ def layout_page(page):
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
     page.window.maximizable = False
-    page.window.resizable = False
+    page.window.resizable = True
     page.window.center()
     page.update()
 
@@ -30,4 +35,32 @@ def layout_page(page):
         'OpenSans' : r'assets\fonts\OpenSans.ttf',
         'Sevillana' : r'assets\fonts\Sevillana.ttf'
     }
+
+    # rotas
+    class ViewsPage(ft.View):
+
+        def __init__(self, rota, conteudo):
+            self.rota = rota
+            self.conteudo = conteudo
+
+            super().__init__(
+                route=self.rota,
+                controls=[self.conteudo],
+                padding=0,
+                spacing=0,
+                bottom_appbar=MenuBottom(page=page)
+            )
+
+
+    def mudar_rota(e):
+        page.views.clear()
+        page.views.append(ViewsPage(rota=page.route, conteudo=ViewHome(page=page)))       
     
+        page.update()
+
+
+    page.on_route_change = mudar_rota
+    page.go('/')
+
+    # Overlay
+    # page.bottom_appbar = MenuBottom()
