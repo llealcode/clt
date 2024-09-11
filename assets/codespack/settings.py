@@ -1,6 +1,6 @@
 # Classes criadas
-from assets.pack.page_home import ViewHome
-from assets.pack.overlay import MenuBottom
+from assets.codespack.page_home import ViewHome
+from assets.codespack.menu import MenuBottom
 
 # Bibliotecas do python
 import flet as ft

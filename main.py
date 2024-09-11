@@ -1,4 +1,4 @@
-from assets.pack import settings
+from assets.codespack import settings
 
 import flet as ft
 
