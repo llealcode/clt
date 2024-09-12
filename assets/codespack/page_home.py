@@ -1,3 +1,6 @@
+from assets.codespack.overlay import AlertaCalculoHorasExtras
+
+
 import flet as ft
 
 
@@ -57,26 +60,30 @@ class TxtCampo(ft.Column):
 
 class BotaoCalcular(ft.ElevatedButton):
 
-    def __init__(self, controles: list):
-        self.resultado = controles[0]
-        self.salario = controles[1]
-        self.jornada = controles[2]
-        self.horas = controles[3]
-        self.adicional = controles[4]
+    def __init__(self):
+        # self.resultado = controles[0]
+        # self.salario = controles[1]
+        # self.jornada = controles[2]
+        # self.horas = controles[3]
+        # self.adicional = controles[4]
+        # self.alerta = controles[5]
 
-        def calcular(e):
+        # def calcular(e):
 
-            salario = float(self.salario.controls[1].value)
-            jornada = int(self.jornada.controls[1].value)
-            horas = int(self.horas.controls[1].value)
-            adicional = int(self.adicional.controls[1].value)
+            # salario = float(self.salario.controls[1].value)
+            # jornada = int(self.jornada.controls[1].value)
+            # horas = int(self.horas.controls[1].value)
+            # adicional = int(self.adicional.controls[1].value)
 
-            soma = float(((salario/jornada)*horas)*(1+(adicional/100)))
-            total = str(f'{soma:.2f}').replace('.', ',')
+            # soma = float(((salario/jornada)*horas)*(1+(adicional/100)))
+            # total = str(f'{soma:.2f}').replace('.', ',')
 
-            self.resultado.value = f'Total: R$ {total}'
-            self.resultado.color = ft.colors.GREEN
-            self.resultado.update()            
+            # self.resultado.value = f'Total: R$ {total}'
+            # self.resultado.color = ft.colors.GREEN
+            # self.resultado.update()
+            
+            # self.alerta.open = True
+            # self.alerta.update()         
 
         super().__init__(
             text='Calcular',
@@ -88,7 +95,7 @@ class BotaoCalcular(ft.ElevatedButton):
             ),
             width=370,
             height=45,
-            on_click=calcular
+            # on_click=calcular
         )
 
 
@@ -116,8 +123,6 @@ class ViewHome(ft.Container):
         self.horas = TxtCampo(texto='Horas extras')
         self.adicional = TxtCampo(texto='% adicional', prefix='% ')
 
-        self.controles = [self.resultado, self.salario, self.jornada, self.horas, self.adicional]
-
         super().__init__(
             content=ft.Column(
                 controls=[
@@ -127,7 +132,7 @@ class ViewHome(ft.Container):
                     ft.Container(content=self.jornada, margin=ft.margin.only(top=20)),
                     ft.Container(content=self.horas, margin=ft.margin.only(top=20)),
                     ft.Container(content=self.adicional, margin=ft.margin.only(top=20)), 
-                    ft.Row(controls=[ft.Container(content=BotaoCalcular(self.controles), margin=ft.margin.only(top=30))], alignment=ft.MainAxisAlignment.CENTER),
+                    ft.Row(controls=[btn:=ft.Container(content=BotaoCalcular(), margin=ft.margin.only(top=30))], alignment=ft.MainAxisAlignment.CENTER),
                     ft.Row(controls=[ft.Container(content=self.resultado, margin=ft.margin.only(top=50))], alignment=ft.MainAxisAlignment.CENTER)
                 ],
                 spacing=0
@@ -136,4 +141,4 @@ class ViewHome(ft.Container):
             bgcolor=ft.colors.with_opacity(opacity=0.10, color=ft.colors.WHITE12),
             padding=ft.padding.symmetric(vertical=10, horizontal=20),
             height=page.height*0.88
-    )
+    )    

@@ -39,6 +39,7 @@ class BotoesMenu(ft.IconButton):
             )
         )
 
+
 class UpperAppBar(ft.AppBar):
 
     def __init__(self, page):
@@ -49,5 +50,4 @@ class UpperAppBar(ft.AppBar):
             title=ft.Text("Cálculos trabalhistas"),
             center_title=False,
             bgcolor=ft.colors.GREEN
-
         )
