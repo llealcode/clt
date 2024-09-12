@@ -1,6 +1,6 @@
 # Classes criadas
 from assets.codespack.page_home import ViewHome
-from assets.codespack.menu import MenuBottom
+from assets.codespack.menu import MenuBottom, UpperAppBar
 
 # Bibliotecas do python
 import flet as ft
@@ -48,7 +48,8 @@ def layout_page(page):
                 controls=[self.conteudo],
                 padding=0,
                 spacing=0,
-                bottom_appbar=MenuBottom(page=page)
+                bottom_appbar=MenuBottom(page=page),
+                appbar=UpperAppBar(page=page)
             )
 
 
