@@ -49,5 +49,5 @@ class UpperAppBar(ft.AppBar):
             leading_width=40,
             title=ft.Text("Cálculos trabalhistas"),
             center_title=False,
-            bgcolor=ft.colors.GREEN
+            bgcolor=ft.colors.with_opacity(opacity=0.3, color=ft.colors.BLACK)
         )

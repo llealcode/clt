@@ -62,6 +62,3 @@ def layout_page(page):
 
     page.on_route_change = mudar_rota
     page.go('/')
-
-    # Overlay
-    # page.bottom_appbar = MenuBottom()
